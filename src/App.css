@@ -1,38 +1,79 @@
+header {
+  padding: 16px 24px;
+}
+
 .App {
-  text-align: center;
+  margin: 60px auto 0;
+  padding: 0 60px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.shareblock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.row {
+  display: flex;
+  margin-bottom: 32px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.row:last-of-type {
+  margin-bottom: 0;
+}
+
+.column {
+  flex-direction: column;
+  margin-right: 32px;
+}
+
+.column:last-of-type {
+  margin-right: 0;
+}
+
+.question-mark {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 1.5;
+  margin-left: 8px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 16px !important;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    padding: 0 24px;
+    margin-top: 32px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h3 {
+    margin-top: 24px;
+  }
+  .row {
+    flex-direction: column;
+    margin-bottom:  0;
+  }
+
+  .column {
+    margin-right: 0;
+  }
+
+  .logo {
+    position: absolute;
+    bottom: -40%;
+    left: 0;
   }
 }
