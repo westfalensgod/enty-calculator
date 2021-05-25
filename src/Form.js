@@ -46,10 +46,23 @@ function Calculator() {
   }
 
   const handlePeriodChange = e => {
-    setState({
-      ...state,
-      periodType: e.target.value
-    })
+    if (e.target.value === 'hourly') {
+      const newWageAmount = state.inputAmount * state.amountOfHours;
+
+      setState({
+        ...state,
+        periodType: e.target.value,
+        parameters: {
+          ...state.parameters,
+          wageAmount: newWageAmount
+        }
+      })
+    } else {
+      setState({
+        ...state,
+        periodType: e.target.value
+      })
+    }
   }
 
   const handleWageAmountChange = (e) => {
@@ -85,9 +98,15 @@ function Calculator() {
   }
 
   const handleAmountOfWorkingHours = hours => {
+    const newWageAmount = hours.target.value * state.inputAmount;
+
     setState({
       ...state,
       amountOfHours: hours.target.value,
+      parameters: {
+        ...state.parameters,
+        wageAmount: newWageAmount
+      }
     })
   }
 
