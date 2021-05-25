@@ -180,10 +180,8 @@ function Calculator() {
             </div>
             <div className="column">
               <Statistic title="Net Salary/Wage" value={state.parameters.netSalary} suffix="€" />
-              <br />
-              <br />
-              <a className="logo" href="https://enty.io">
-                <img style={{ margin: '0 auto' }} src={Logo} alt="enty logo" />
+              <a className="logo" style={{ margin: '16px 0 16px' }} href="https://enty.io">
+                <img src={Logo} alt="enty logo" />
               </a>
             </div>
           </div>
